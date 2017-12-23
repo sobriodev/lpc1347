@@ -22,5 +22,4 @@
  */
 void Timer_Reset(LPC_TIMER_T *timer);
 
-
 #endif /* CT_H_ */
