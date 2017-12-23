@@ -16,9 +16,9 @@
 #define TIMER_RESET_MASK    _BIT(TIMER_RESET_POS)   /* TCR : CRST mask */
 
 /**
- * @brief 	Resets the particular timer
- * @param 	timer : Pointer to timer
- * @return 	Nothing
+ * @brief   Resets the particular timer
+ * @param   timer : Pointer to timer
+ * @return  Nothing
  */
 void Timer_Reset(LPC_TIMER_T *timer);
 
