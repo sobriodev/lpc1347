@@ -10,10 +10,10 @@
 
 #include "chip.h"
 
-#define TIMER_ENABLE_POS 0
-#define TIMER_ENABLE_MASK _BIT(TIMER_ENABLE_POS)
-#define TIMER_RESET_POS 1
-#define TIMER_RESET_MASK _BIT(TIMER_RESET_POS)
+#define TIMER_ENABLE_POS 	0						/* TCR : CEN position */
+#define TIMER_ENABLE_MASK	_BIT(TIMER_ENABLE_POS)	/* TCR : CEN mask */
+#define TIMER_RESET_POS 	1						/* TCR : CRST position */
+#define TIMER_RESET_MASK 	_BIT(TIMER_RESET_POS)	/* TCR : CRST mask */
 
 /**
  * @brief 	Resets the particular timer
