@@ -5,7 +5,6 @@
  *      Author: sobriodev
  */
 
-
 #include "../inc/ct.h"
 
 void Timer_Reset(LPC_TIMER_T *timer) {
