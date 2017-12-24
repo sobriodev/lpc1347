@@ -5,6 +5,7 @@
 	<projects>
 		<project>lpc_board_nxp_lpcxpresso_1347</project>
 		<project>lpc_chip_13xx</project>
+		<project>static</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

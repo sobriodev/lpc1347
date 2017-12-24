@@ -3,6 +3,7 @@
 .settings/
 .metadata/
 Debug/
+FreeRTOS_TAD_logs/
 
 # Prerequisites
 *.d
