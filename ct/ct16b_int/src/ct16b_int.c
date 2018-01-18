@@ -60,7 +60,7 @@ int main(void) {
     Board_Init();
 
     volatile static uint8_t i;
-    for (i = 0; i < 4; ++i) {
+    for (i = 0; i < 3; ++i) {
         IOCON->PIO1[GPIO_START_PIN + i] = IOCON_FUNC0;
         GPIO->DIR[GPIO_PORT] |= _BIT(GPIO_START_PIN + i);
         GPIO->B[GPIO_PORT][GPIO_START_PIN + i] = 0;
