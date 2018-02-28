@@ -6,8 +6,9 @@
 */
 
 #include "board.h"
-#include "../../static/inc/ct.h"
 #include <cr_section_macros.h>
+#include "../../lib/inc/timer.h"
+#include "../../lib/inc/nvic.h"
 
 #define TIMER           LPC_TIMER16_0
 #define GPIO            LPC_GPIO_PORT
@@ -68,7 +69,7 @@ int main(void) {
 
     SYSCTL->SYSAHBCLKCTRL |= CT16B0_CLOCK_MASK;
 
-    Timer_Reset(TIMER);
+    Chip_TIMER_Reset(TIMER);
 
     TIMER->MCR = TIMER_INT_ON_MATCH(MATCH0) | TIMER_INT_ON_MATCH(MATCH1) | TIMER_INT_ON_MATCH(MATCH2) | TIMER_INT_ON_MATCH(MATCH3) | TIMER_RESET_ON_MATCH(MATCH3);
 
@@ -79,10 +80,9 @@ int main(void) {
 
     TIMER->PR = PRESCALE_VAL - 1;
 
-    TIMER->TCR |= TIMER_ENABLE_MASK;
+    TIMER->TCR |= TIMER_ENABLE;
 
-    NVIC->ICPR[0] = NVIC_CT16B0_MASK;
-    NVIC->ISER[0] = NVIC_CT16B0_MASK;
+    NVIC_Int(TIMER_16_0_IRQn);
 
     while(1) {}
     return 0 ;
