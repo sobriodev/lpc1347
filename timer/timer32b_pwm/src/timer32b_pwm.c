@@ -6,6 +6,10 @@
 ===============================================================================
 */
 
+#include "board.h"
+#include "../../lib/inc/timer.h"
+#include <cr_section_macros.h>
+
 #define IOCON                   LPC_IOCON
 #define GPIO                    LPC_GPIO_PORT
 #define TIMER                   LPC_TIMER32_0
@@ -19,13 +23,12 @@
 
 #define PWM_CYCLE_LENGTH        2000            /* Cycle length */
 #define PWM_DUTY_CYCLE          1               /* Duty cycle in percentage */
-
 #define PRESCALE_VAL            36000           /* f = 72MHz, output T = 0.5ms => output f = 2kHz, 72MHz / 2kHZ = 36000 */
 
-#include "board.h"
-#include "../../lib/inc/timer.h"
-#include <cr_section_macros.h>
-
+/**
+ * @brief   Main program routine
+ * @return  Function should not return
+ */
 int main(void) {
     // Generic initialization
     SystemCoreClockUpdate();
