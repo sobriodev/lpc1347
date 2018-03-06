@@ -7,6 +7,7 @@
 
 #include "board.h"
 #include <cr_section_macros.h>
+#include "../inc/pwm.h"
 
 int main(void) {
     // Generic initialization
